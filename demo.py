@@ -1,17 +1,31 @@
-from kit import Client, AppInstall, PurchaseTxn
+import os
+import requests
+
+BASE_URL = os.getenv("BASE_URL", "http://localhost:8080")
 
 def main():
-    cli = Client(base_url="http://localhost:8080")
+    # 1) purchase
+    purchase = {
+        "event_type": "purchase",
+        "user_id": "20031",
+        "currency": "AED",
+        "amount": 120
+    }
+    r1 = requests.post(f"{BASE_URL}/collect", json=purchase, timeout=5)
+    print("purchase ->", r1.status_code, r1.json())
 
-    print("install …")
-    r1 = cli.send(AppInstall(device_id="dev-1", user_id="u1", campaign="promo"))
-    print("  ->", r1.status_code, r1.json())
+    # 2) install
+    install = {
+        "event_type": "install",
+        "device_id": "device 2",
+        "user_id": "20031",
+        "app_version": "1.1",
+        "ts": "2025-xx-xx@xx:xx:xx"
+    }
+    r2 = requests.post(f"{BASE_URL}/collect", json=install, timeout=5)
+    print("install  ->", r2.status_code, r2.json())
 
-    print("purchase …")
-    r2 = cli.send(PurchaseTxn(device_id="dev-1", currency="EUR", amount_minor=299, item_id="coins_300"))
-    print("  ->", r2.status_code, r2.json())
-
-    print("\nCheck ./.out/stream_debug.jsonl")
+    print("\nCheck ./output/stream_debug.json")
 
 if __name__ == "__main__":
     main()

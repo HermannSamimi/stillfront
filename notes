@@ -1,0 +1,14 @@
+curl -s -X POST http://localhost:8080/collect \
+   -H "Content-Type: application/json" \
+   -d '{"event_type":"purchase", "user_id":"20031", "currency": "AED","amount": 120 }'
+
+curl -s -X POST http://localhost:8080/collect \
+   -H "Content-Type: application/json" \
+   -d '{"event_type":"install", "device_id":"device 2", "user_id":"20031", "app_version": "1.1","ts": "2025-xx-xx@xx:xx:xx" }'
+
+
+
+python3 -m pytest -q tests/basic_test.py::test_health
+python3 -m pytest -q tests/basic_test.py::test_install_flow
+python3 -m pytest -q tests/basic_test.py::test_purchase_ok
+python3 -m pytest -q tests/basic_test.py::test_purchase_validation
