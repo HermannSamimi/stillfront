@@ -34,7 +34,7 @@
   - [Tests & Demo](#Tests)
   - [Troubleshooting](#troubleshooting)
 - [Acknowledgments](#acknowledgments)
-
+- [Notice](#Notice)
 ---
 
 ## Overview
@@ -203,6 +203,17 @@ Use → [http://localhost:8000/docs](http://localhost:8000/docs)
 
 - This project is deveoped by [Hermann Samimi](https://github.com/HermannSamimi) as a case study for the Analytics Engineer role.
 - Security (auth/authz, secrets handling, etc.) is out of scope for this task, but in a real system the API would include authentication and use environment variables for sensitive configuration.
+
+
+---
+
+## Notice
+
+This repository was developed as part of a **technical assignment** provided by Stillfront for evaluation purposes.  
+It is not an official Stillfront product and should be considered a demonstration project only.  
+
+The Stillfront company logo shown above is © Stillfront Group AB and is used here **for illustrative purposes only** to indicate the context of the assignment.  
+All rights to the logo and trademarks remain with their respective owner.
 
 <div align="right">
 
