@@ -5,17 +5,12 @@
 
 <img src="https://www.stillfront.com/en/wp-content/uploads/sites/2/2024/05/stillfront-black-logo-768x768.png" width="30%" style="position: relative; top: 0; right: 0;" alt="Project Logo"/>
 
-# STILLFRONT
-
 <em>A lightweight event processing and monitoring service built with FastAPI and Python.</em>
 
 <!-- BADGES -->
 <img src="https://img.shields.io/github/languages/top/HermannSamimi/stillfront?style=flat-square&color=FF4B4B" alt="repo-top-language">
 <img src="https://img.shields.io/badge/Docker-15.8%25-FFDD00?style=flat-square" alt="second-top-language">
 <img src="https://img.shields.io/github/languages/count/HermannSamimi/stillfront?style=flat-square&color=FF4B4B" alt="repo-language-count">
-
-
-<em>Built with the tools and technologies:</em>
 
 <img src="https://img.shields.io/badge/FastAPI-009688.svg?style=flat-square&logo=FastAPI&logoColor=white" alt="FastAPI">
 <img src="https://img.shields.io/badge/Pytest-0A9EDC.svg?style=flat-square&logo=Pytest&logoColor=white" alt="Pytest">
@@ -34,9 +29,9 @@
 - [Features](#features)
 - [Project Structure](#project-structure)
 - [Getting Started](#getting-started)
-  - [Run with Docker (recommended)](#run-with-docker-recommended)
-  - [Run locally (without-docker)](#run-locally-without-docker)
-  - [Test](#Tests)
+  - [Run with Docker](#run-with-docker-recommended)
+  - [Run locally](#run-locally-without-docker)
+  - [Tests & Demo](#Tests)
   - [Troubleshooting](#troubleshooting)
 - [Acknowledgments](#acknowledgments)
 
@@ -44,8 +39,8 @@
 
 ## Overview
 
-The **Stillfront project** is a simple, modular pipeline for **ingesting, processing, and exposing event data** using **FastAPI** and **Pydantic**.  
-It’s intentionally minimal—suitable as a technical assignment or starter template.
+This **project** is a simple, modular pipeline for **ingesting, processing, and exposing event data** using **FastAPI** and **Pydantic**.  
+It’s intentionally minimal—suitable as a technical assignment.
 
 ---
 
@@ -96,8 +91,7 @@ docker-compose up --build
 
 2. **Open the API:**
 
-- Swagger UI → [http://localhost:8000/docs](http://localhost:8000/docs)  
-  *(If `127.0.0.1:8000` doesn’t load, use `localhost`.)*
+- Swagger UI → [http://localhost:8000/docs](http://localhost:8000/docs) 
 
 3. **In terminal try dummy events:**
 
@@ -146,25 +140,25 @@ Then open → [http://localhost:8000/docs](http://localhost:8000/docs)
 ### Tests
 
 #### to test the process, you can try following code. i deveoped 4 basic tests only.
-- Health check:
+- **Health check**:
   ```
   python3 -m pytest -q tests/basic_test.py::test_health
   ```
-- Install flow:
+- **Install flow test**:
   ```
   python3 -m pytest -q tests/basic_test.py::test_install_flow
   ```
-- Purchase validation:
+- **Purchase validation**:
   ```
   python3 -m pytest -q tests/basic_test.py::test_purchase_ok
   ```
-- Purchase OK:
+- **Purchase OK**:
   ```
   python3 -m pytest -q tests/basic_test.py::test_purchase_validation
   ```
 
 ### Demo
-### Execute `demo.py` in root floder which produce 2 dummy event for each category.
+Execute `demo.py` in root floder which produce 2 dummy event for each category.
 
 ---
 
