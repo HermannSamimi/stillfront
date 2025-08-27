@@ -10,7 +10,7 @@
 <!-- BADGES -->
 <img src="https://img.shields.io/github/languages/top/HermannSamimi/stillfront?style=flat-square&color=FF4B4B" alt="repo-top-language">
 <img src="https://img.shields.io/badge/Docker-15.8%25-FFDD00?style=flat-square" alt="second-top-language">
-<img src="https://img.shields.io/github/languages/count/HermannSamimi/stillfront?style=flat-square&color=FF4B4B" alt="repo-language-count">  
+<img src="https://img.shields.io/github/languages/count/HermannSamimi/stillfront?style=flat-square&color=FF4B4B" alt="repo-language-count">  <br>
 <img src="https://img.shields.io/badge/FastAPI-009688.svg?style=flat-square&logo=FastAPI&logoColor=white" alt="FastAPI">
 <img src="https://img.shields.io/badge/Pytest-0A9EDC.svg?style=flat-square&logo=Pytest&logoColor=white" alt="Pytest">
 <img src="https://img.shields.io/badge/Python-3776AB.svg?style=flat-square&logo=Python&logoColor=white" alt="Python">
