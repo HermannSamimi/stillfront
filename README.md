@@ -50,6 +50,7 @@ It’s intentionally minimal—suitable as a technical assignment.
 - **Pydantic schemas** for validation.  
 - **Pytest** scaffolding for basic tests.  
 - **Containerized** with Docker for one-command startup.  
+- **Snowfloake /Data Modeling** Events are stored raw with `currency` and `amount`. A downstream ETL can join with daily FX rates to derive `amount_usd`. ![ERD](./ERD.png)
 
 ---
 
@@ -135,6 +136,14 @@ uvicorn service.app:app --reload
 
 Then open → [http://localhost:8000/docs](http://localhost:8000/docs)
 
+### SDK Example
+```python
+from kit import Client, AppInstall
+
+cli = Client(base_url="http://localhost:8000")
+cli.send(AppInstall(device_id="macbook pri", user_id="hermann_12345"))
+```
+
 ---
 
 ### Tests
@@ -193,6 +202,7 @@ Use → [http://localhost:8000/docs](http://localhost:8000/docs)
 ## Acknowledgments
 
 - This project is deveoped by [Hermann Samimi](https://github.com/HermannSamimi) as a case study for the Analytics Engineer role.
+- Security (auth/authz, secrets handling, etc.) is out of scope for this task, but in a real system the API would include authentication and use environment variables for sensitive configuration.
 
 <div align="right">
 
